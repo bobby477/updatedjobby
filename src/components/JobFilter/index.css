@@ -1,0 +1,43 @@
+.filter-container {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  font-family: 'Roboto';
+  color: white;
+}
+
+.profile-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/profile-bg.png');
+  height: 200px;
+  width: 250px;
+  background-size: cover;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.profile-img {
+  width: 50px;
+}
+
+hr {
+  margin-top: 20px;
+  width: 260px;
+  align-self: flex-start;
+}
+
+.filter-head {
+  font-size: 20px;
+}
+
+.unorder {
+  list-style: none;
+  margin: 0px;
+}
+
+.profilehead {
+  color: #6366f1;
+}
+
+.profilepara {
+  color: #2c364c;
+}

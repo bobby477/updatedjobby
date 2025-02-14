@@ -1,0 +1,105 @@
+.selected-container {
+  height: 100%;
+  background-color: black;
+  background-size: cover;
+}
+
+.main {
+  padding: 20px;
+}
+
+.licontainer {
+  background-color: #202020;
+  margin: 10px;
+  border-radius: 10px;
+  width: 100%;
+  padding: 10px;
+  color: white;
+}
+
+.logoimg {
+  width: 80px;
+  margin-right: 10px;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+}
+
+.linkcontainer {
+  text-decoration: none;
+  color: white;
+}
+
+.head {
+  font-size: 20px;
+}
+
+.star {
+  display: flex;
+  align-items: center;
+}
+
+.bs {
+  color: #fbbf24;
+  margin-right: 5px;
+}
+
+.location-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.location-card {
+  display: flex;
+  align-items: center;
+}
+
+.location-align {
+  display: flex;
+  align-items: center;
+  margin-right: 10px;
+  width: 100%;
+}
+
+hr {
+  width: 100%;
+}
+
+.desc {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.unorder-container {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.company-container {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.incpara {
+  font-size: 20px;
+}
+
+.white-head {
+  color: white;
+  margin: 10px;
+}
+
+
+.unorder-container2{
+  display: flex;
+  align-items: center;
+  width: 100%;
+}

@@ -1,0 +1,25 @@
+.home-container {
+  background-image: url('https://assets.ccbp.in/frontend/react-js/home-lg-bg.png');
+  height: 100vh;
+  background-size: cover;
+  margin: 0px;
+}
+
+.title-card {
+  font-family: 'Roboto';
+  color: white;
+  width: 400px;
+  padding-top: 50px;
+  padding-left: 30px;
+}
+
+.head {
+  font-size: 40px;
+}
+
+.job-button{
+  background-color:  #6366f1;
+  padding: 10px;
+  color: white;
+  border-radius: 5px;
+}
