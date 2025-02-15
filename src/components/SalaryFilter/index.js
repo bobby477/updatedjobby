@@ -1,10 +1,10 @@
 const SalaryFilter = props => {
   const {sal, fun2} = props
 
-  const {label} = sal
+  const {salaryRangeId} = sal
 
   const salary = () => {
-    fun2(label)
+    fun2(salaryRangeId)
   }
 
   return (
@@ -16,7 +16,7 @@ const SalaryFilter = props => {
         name="salary"
         onClick={salary}
       />
-      <label>{sal.label}</label>
+      <label for={sal.label}>{sal.label}</label>
     </div>
   )
 }

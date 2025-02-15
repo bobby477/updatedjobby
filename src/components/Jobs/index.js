@@ -33,6 +33,25 @@ const employmentTypesList = [
   },
 ]
 
+const locationList = [
+  {
+    label: 'Hyderabad',
+    locationTypeId: 'HYDERABAD',
+  },
+  {label: 'Bangalore', locationTypeId: 'BANGALORE'},
+  {
+    label: 'Chennai',
+    locationTypeId: 'CHENNAI',
+  },
+  {
+    label: 'Delhi',
+    locationTypeId: 'DELHI',
+  },
+  {
+    label: 'Mumbai',
+    locationTypeId: 'MUMBAI',
+  },
+]
 const salaryRangesList = [
   {
     salaryRangeId: '1000000',
@@ -62,9 +81,10 @@ const states = {
 class Jobs extends Component {
   state = {
     stages: states.load,
-    employeementType: [],
+    employement: [],
     salaryRange: '',
     searchValue: '',
+    location: [],
     jobData: [],
     user: {},
   }
@@ -97,13 +117,13 @@ class Jobs extends Component {
     this.setState({user: newData})
   }
   getJobs = async () => {
-    const {employeementType, salaryRange, searchValue} = this.state
+    const {employement, salaryRange, searchValue, location} = this.state
 
-    const newD = employeementType.join()
+    const newD = employement.join(',')
 
-    
+    const newL = location.join(',')
 
-    const url = `https://apis.ccbp.in/jobs?employment_type=${newD}&minimum_package=${salaryRange}&search=${searchValue}`
+    const url = `https://apis.ccbp.in/jobs?employment_type=${newD}&minimum_package=${salaryRange}&search=${searchValue}&location=${newL}`
 
     const jwtToken = Cookies.get('jwt_token')
 
@@ -147,6 +167,10 @@ class Jobs extends Component {
     </div>
   )
 
+  che = () => {
+    return <h1>SD</h1>
+  }
+
   fail = () => (
     <div>
       <img
@@ -154,7 +178,7 @@ class Jobs extends Component {
         alt="failure view"
       />
       <p>We cannot seem to find the page you are looking for</p>
-      <button>Retry</button>
+      <button onClick={this.getJobs}>Retry</button>
     </div>
   )
 
@@ -202,7 +226,7 @@ class Jobs extends Component {
 
   updatedEmp = employmentTypeId => {
     this.setState(
-      pre => ({employeementType: [...pre.employeementType, employmentTypeId]}),
+      pre => ({employement: [...pre.employement, employmentTypeId]}),
       this.getJobs,
     )
   }
@@ -213,6 +237,14 @@ class Jobs extends Component {
 
   requiredJob = event => {
     this.setState({searchValue: event.target.value})
+  }
+
+  updateLocation = locationTypeId => {
+    this.setState(
+      pre => ({location: [...pre.location, locationTypeId]}),
+      this.getJobs,
+    )
+    // this.setState({location: locationTypeId}, this.getJobs)
   }
 
   find = () => {
@@ -230,8 +262,10 @@ class Jobs extends Component {
             <JobFilter
               employee={employmentTypesList}
               salary={salaryRangesList}
+              location={locationList}
               funcemployee={this.updatedEmp}
               funsalary={this.updatedSalary}
+              funcloc={this.updateLocation}
               userData={user}
             />
           </div>

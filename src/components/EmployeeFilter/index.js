@@ -1,10 +1,10 @@
 const EmployeeFilter = props => {
   const {emp, func1} = props
 
-  const {label} = emp
+  const {employmentTypeId} = emp
 
   const funcEmpId = () => {
-    func1(label)
+    func1(employmentTypeId)
   }
 
   return (
@@ -15,7 +15,7 @@ const EmployeeFilter = props => {
         id={emp.employmentTypeId}
         onClick={funcEmpId}
       />
-      <label>{emp.label}</label>
+      <label for={emp.employmentTypeId}>{emp.label}</label>
     </div>
   )
 }

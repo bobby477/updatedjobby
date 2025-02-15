@@ -4,6 +4,8 @@
   padding: 20px;
   font-family: 'Roboto';
   color: white;
+  position: sticky;
+  top: 0;
 }
 
 .profile-container {

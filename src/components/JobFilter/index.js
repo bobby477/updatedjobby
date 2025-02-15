@@ -4,15 +4,29 @@ import SalaryFilter from '../SalaryFilter'
 
 import EmployeeFilter from '../EmployeeFilter'
 
-const JobFilter = props => {
-  const {salary, employee, funcemployee, userData, funsalary} = props
+import LocationFilter from '../LocationFilter'
 
-  const emp = employmentTypeId => {
+const JobFilter = props => {
+  const {
+    salary,
+    employee,
+    funcemployee,
+    userData,
+    funsalary,
+    location,
+    funcloc,
+  } = props
+
+  const empch = employmentTypeId => {
     funcemployee(employmentTypeId)
   }
 
   const sal = salaryRangeId => {
     funsalary(salaryRangeId)
+  }
+
+  const locc = locationTypeId => {
+    funcloc(locationTypeId)
   }
 
   return (
@@ -34,7 +48,7 @@ const JobFilter = props => {
             <EmployeeFilter
               emp={each}
               key={each.employmentTypeId}
-              func1={emp}
+              func1={empch}
             />
           ))}
         </div>
@@ -48,6 +62,15 @@ const JobFilter = props => {
               <SalaryFilter sal={each} key={each.salaryRangeId} fun2={sal} />
             ))}
           </form>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <h1 className="filter-head">Location</h1>
+        <div className="unorder">
+          {location.map(each => (
+            <LocationFilter loc={each} key={each.locationTypeId} func3={locc} />
+          ))}
         </div>
       </div>
     </div>
